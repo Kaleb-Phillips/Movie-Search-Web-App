@@ -1,0 +1,35 @@
+# File: app.yaml
+# Description: Configuration file for Google App Engine. 
+# This file also sets the API Read Access Token as an 
+# environment variable so that it can be called in the python script.
+#
+# Authors: Kaleb Phillips & Arnulfo Rivera
+# Date: August 7 2024
+# Class: UTSA CS-4843-01T Cloud Computing
+runtime: python
+env: flex
+entrypoint: gunicorn -b :$PORT main:app
+
+
+handlers:
+- url: /.*
+  script: auto
+- url: /static
+  static_dir: public
+
+runtime_config:
+  operating_system: ubuntu22
+
+
+# https://cloud.google.com/appengine/docs/flexible/python/configuring-your-app-with-app-yaml
+manual_scaling:
+  instances: 1
+resources:
+  cpu: 1
+  memory_gb: 0.5
+  disk_size_gb: 10
+
+env_variables:
+  # TMDB API Read Access Token (JWT), used for bearer-token authentication
+  TMDB_ACCESS_TOKEN: 'Enter_Your_TMDB_API_Read_Access_Token_Here'
+

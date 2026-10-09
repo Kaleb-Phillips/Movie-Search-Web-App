@@ -1,0 +1,12 @@
+# File: requirements.txt
+# Description: Requirements file for Google App Engine. 
+#
+# Authors: Kaleb Phillips & Arnulfo Rivera
+# Date: August 7 2024
+# Class: UTSA CS-4843-01T Cloud Computing
+requests
+Flask==3.0.3; python_version > '3.6'
+Flask==2.3.3; python_version < '3.7'
+Werkzeug==3.0.3; python_version > '3.6'
+Werkzeug==2.3.7; python_version < '3.7'
+gunicorn==22.0.0
