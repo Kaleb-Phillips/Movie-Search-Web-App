@@ -1,0 +1,28 @@
+<!-- 
+  File: index.html
+  Description: This page displays a search bar for searching movies
+  and a Now Playing button that takes the user to the discover.html page.
+
+  Authors: Kaleb Phillips & Arnulfo Rivera
+  Date: August 7 2024
+  Class: UTSA CS-4843-01T Cloud Computing
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Review</title>
+    <link rel="stylesheet" href="../static/css/main.css">
+</head>
+<body>
+    <h1>Enter Movie Name</h1>
+    <form action="/movie" method="post">
+        <input type="text" name="movie_id" placeholder="Search..">
+        <input type="submit" value="Get Movie Description">
+    </form>
+    <div>
+    <form action="/discover" method="post">
+        <input type="submit" value="Now Playing">
+    </form>
+</div>
+</body>
+</html>
